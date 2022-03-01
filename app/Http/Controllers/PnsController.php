@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pns;
 use Illuminate\Http\Request;
 
 class PnsController extends Controller
@@ -14,6 +15,10 @@ class PnsController extends Controller
     public function index()
     {
         //
+        $pns = Pns::latest()->paginate(5);
+        return view('pns.index', [
+            'pns' => $pns
+        ])->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

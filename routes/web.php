@@ -41,7 +41,7 @@ Route::resource('userpns', \App\Http\Controllers\UserPnsController::class);
 // Route::get('search/{query}', [App\Http\Controllers\UserPnsController::class, 'search'])
 //     ->middleware('auth');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', function() {
     return view('home');
